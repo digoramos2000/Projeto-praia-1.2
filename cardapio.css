@@ -1,0 +1,197 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+/* Cabeçalho com imagem de fundo */
+.header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('./img/imagem2.jpg') center/cover fixed;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Conteúdo dentro do cabeçalho */
+.header .header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid white;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.address, .schedule-text {
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.schedule {
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 15px;
+    border-radius: 8px;
+}
+
+/* Título do cardápio */
+.menu-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 40px;
+    color: #333;
+}
+
+/* Seção de Menu */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ajuste para garantir que fiquem lado a lado */
+    gap: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Card de produto */
+.product {
+    width: 30%; /* Ajuste para os produtos ficarem lado a lado */
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+
+/* Efeito hover nos cards */
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagem do produto */
+.item-image {
+    width: 100%;
+    height: auto;
+    max-height: 80px; /* Menor altura para a imagem */
+    object-fit: cover; /* Mantém as imagens bem ajustadas */
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Efeito hover nas imagens */
+.item-image:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* Informações do produto */
+.product-info {
+    margin-top: 15px;
+}
+
+.product-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+}
+
+.product-description {
+    font-size: 1rem;
+    color: #666;
+    margin: 8px 0;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* Responsividade para telas grandes */
+@media (max-width: 768px) {
+    .header {
+        padding: 80px 15px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .menu-title {
+        font-size: 2rem;
+    }
+
+    .menu {
+        flex-direction: row; /* Ajuste para as imagens ficarem lado a lado */
+        justify-content: space-between;
+    }
+
+    .product {
+        width: 45%; /* 45% da largura para que caibam 2 itens lado a lado */
+    }
+}
+
+/* Responsividade para smartphones e telas pequenas */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem; /* Menor tamanho da fonte para dispositivos móveis */
+    }
+
+    .address, .schedule-text {
+        font-size: 1rem;
+    }
+
+    .menu-title {
+        font-size: 1.6rem;
+    }
+
+    /* Ajustes para as imagens em dispositivos pequenos */
+    .item-image {
+        max-height: 70px; /* Reduzimos ainda mais a altura */
+    }
+
+    /* Ajuste a largura para 100% nas telas pequenas */
+    .product {
+        width: 48%; /* Largura ajustada para 2 itens lado a lado no celular */
+    }
+
+    /* Ajusta as informações de cada produto */
+    .product-name {
+        font-size: 1.4rem; /* Diminuir o tamanho da fonte do nome */
+    }
+
+    .product-description {
+        font-size: 0.9rem; /* Ajuste no tamanho da descrição */
+    }
+
+    .product-price {
+        font-size: 1.2rem; /* Ajuste no tamanho do preço */
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Pedido</title>
+    <link rel="stylesheet" href="adicionarpedido.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Adicionar Novo Pedido</h1>
+
+        <form id="addItemForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="itemImage">Imagem do Item</label>
+                <input type="file" id="itemImage" accept="image/*" required>
+                <div id="imagePreview" class="image-preview"></div> <!-- Local para exibir a imagem -->
+            </div>
+
+            <div class="form-group">
+                <label for="itemName">Nome do Item</label>
+                <input type="text" id="itemName" placeholder="Nome do item" required>
+            </div>
+
+            <div class="form-group">
+                <label for="itemDescription">Descrição do Item</label>
+                <textarea id="itemDescription" placeholder="Descrição do item" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="itemPrice">Preço</label>
+                <input type="number" id="itemPrice" step="0.01" placeholder="Preço do item" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Adicionar Item</button>
+        </form>
+
+        <a href="pagina.html" class="backBtn">Voltar ao Menu</a>
+    </div>
+
+    <script src="adicionarpedido.js"></script>
+</body>
+</html>

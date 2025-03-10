@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Fiscal</title>
+    <link rel="stylesheet" href="notafiscal.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <button id="voltar" onclick="voltarParaDashboard()">← Voltar</button>
+        <h1>Nota Fiscal</h1>
+    </header>
+
+    <div class="container">
+        <h2>Dados do Cliente</h2>
+        <input type="text" id="nomeCliente" placeholder="Nome do Cliente">
+        <input type="number" id="numeroMesa" placeholder="Número da Mesa">
+
+        <h2>Adicionar Itens</h2>
+        <input type="text" id="nomeItem" placeholder="Nome do Produto">
+        <input type="number" id="quantidadeItem" placeholder="Quantidade">
+        <input type="number" id="precoItem" placeholder="Preço Unitário (R$)">
+        <button id="adicionarItem">Adicionar Item</button>
+
+        <h2>Itens na Nota</h2>
+        <ul id="listaItens"></ul>
+        <p><strong>Total: R$ <span id="totalNota">0.00</span></strong></p>
+
+        <button id="gerarPDF">Gerar Nota Fiscal (PDF)</button>
+    </div>
+
+    <script src="notafiscal.js"></script>
+</body>
+</html>

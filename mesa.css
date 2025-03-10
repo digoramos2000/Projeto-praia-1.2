@@ -1,0 +1,208 @@
+/* Resetando estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: #333;
+}
+
+.container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #0277bd;
+    margin-bottom: 15px;
+}
+
+.mesas-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.mesas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.mesa {
+    background-color: #0288d1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.mesa:hover {
+    transform: scale(1.05);
+}
+
+.mesa.pedido {
+    background-color: #ff5722;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.addMesa {
+    background-color: #0288d1;
+}
+
+.addMesa:hover {
+    background-color: #026aa7;
+    transform: scale(1.05);
+}
+
+.removeMesa {
+    background-color: #d32f2f;
+}
+
+.removeMesa:hover {
+    background-color: #b71c1c;
+    transform: scale(1.05);
+}
+
+/* Seção de Pedidos */
+.pedido-section {
+    display: none;
+    margin-top: 20px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pedido-section h2 {
+    color: #0277bd;
+    margin-bottom: 15px;
+}
+
+#novoPedidoInput {
+    width: 70%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+#novoPedidoInput:focus {
+    border-color: #0288d1;
+}
+
+/* Botão Adicionar Pedido */
+#addPedidoBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#addPedidoBtn:hover {
+    background-color: #388E3C;
+    transform: scale(1.05);
+}
+
+/* Lista de pedidos */
+.pedido-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #444;
+}
+
+.pedido-list li {
+    background-color: #f0f0f0;
+    margin: 6px 0;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pedido-list li button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.pedido-list li button:hover {
+    background-color: #d32f2f;
+}
+
+.voltar {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0277bd;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.voltar:hover {
+    background-color: #0277bd;
+    color: white;
+}

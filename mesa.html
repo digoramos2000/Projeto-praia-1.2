@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Mesas</title>
+    <link rel="stylesheet" href="mesa.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <a href="pagina.html" class="voltar">
+        &#8592; Voltar
+    </a>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciamento de Mesas</h1>
+        <p>Clique em uma mesa para gerenciar os pedidos.</p>
+
+        <div class="mesas-container">
+            <div class="mesas"></div>
+        </div>
+
+        <div class="buttons">
+            <button class="addMesa">Adicionar Mesa</button>
+            <button class="removeMesa">Remover Mesa</button>
+        </div>
+
+        <div class="pedido-section">
+            <h2>Pedidos da <span id="mesaNome"></span></h2>
+            <input type="text" id="novoPedidoInput" placeholder="Novo pedido">
+            <button id="addPedidoBtn">Adicionar Pedido</button>
+            <ul class="pedido-list"></ul>
+        </div>
+    </div>
+
+    <script src="mesa.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* Estilo Geral */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #1e1e2f;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+nav {
+    background: linear-gradient(90deg, #ff8c00, #ff3d00);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 10px 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Botão Atualizar Cardápio */
+button {
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 30px;
+}
+
+button:hover {
+    background-color: #ff3d00;
+    transform: scale(1.05);
+}
+
+/* Conteúdo */
+h1 {
+    margin-top: 50px;
+    font-size: 36px;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+}
