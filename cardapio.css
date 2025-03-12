@@ -14,12 +14,12 @@ body {
     text-align: center;
 }
 
-/* Cabeçalho com imagem de fundo */
+/* Cabeçalho responsivo */
 .header {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                 url('./img/imagem2.jpg') center/cover fixed;
     color: white;
-    padding: 100px 20px;
+    padding: 80px 15px;
     text-align: center;
     position: relative;
 }
@@ -31,167 +31,204 @@ body {
 }
 
 .logo {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border: 3px solid white;
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .address, .schedule-text {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 400;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .schedule {
-    margin-top: 10px;
+    margin-top: 8px;
     background: rgba(255, 255, 255, 0.2);
-    padding: 5px 15px;
-    border-radius: 8px;
+    padding: 4px 12px;
+    border-radius: 6px;
 }
 
 /* Título do cardápio */
 .menu-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    margin-top: 40px;
+    margin-top: 30px;
     color: #333;
 }
 
 /* Seção de Menu */
+.menu-container {
+    position: relative;
+    margin: 15px 0;
+}
+
+.menu-btn {
+    padding: 8px 18px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.menu-content {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.menu-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-content li {
+    padding: 10px;
+    text-align: left;
+}
+
+.menu-content li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+}
+
+.menu-content li a:hover {
+    color: #4CAF50;
+}
+
+/* Cardápio e seus produtos */
 .menu {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Ajuste para garantir que fiquem lado a lado */
+    justify-content: space-between;
     gap: 15px;
-    padding: 20px;
-    box-sizing: border-box;
+    padding: 15px;
 }
 
 /* Card de produto */
 .product {
-    width: 30%; /* Ajuste para os produtos ficarem lado a lado */
+    width: 32%;
     background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
-    overflow: hidden;
     text-align: center;
-    padding: 15px;
-    margin-bottom: 25px;
-    box-sizing: border-box;
+    padding: 8px;
+    margin-bottom: 15px;
 }
 
 /* Efeito hover nos cards */
 .product:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Imagem do produto */
 .item-image {
     width: 100%;
     height: auto;
-    max-height: 80px; /* Menor altura para a imagem */
-    object-fit: cover; /* Mantém as imagens bem ajustadas */
+    max-height: 100px;
+    object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 /* Efeito hover nas imagens */
 .item-image:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     opacity: 0.9;
 }
 
 /* Informações do produto */
 .product-info {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .product-name {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #222;
 }
 
 .product-description {
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: #666;
-    margin: 8px 0;
+    margin: 5px 0;
 }
 
 .product-price {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #4CAF50;
 }
 
-/* Responsividade para telas grandes */
+/* Responsividade para telas médias (tablets) */
 @media (max-width: 768px) {
-    .header {
-        padding: 80px 15px;
-    }
-
-    .title {
-        font-size: 2.5rem;
-    }
-
-    .menu-title {
-        font-size: 2rem;
-    }
-
     .menu {
-        flex-direction: row; /* Ajuste para as imagens ficarem lado a lado */
-        justify-content: space-between;
+        justify-content: space-evenly;
     }
 
     .product {
-        width: 45%; /* 45% da largura para que caibam 2 itens lado a lado */
+        width: 45%;
     }
 }
 
-/* Responsividade para smartphones e telas pequenas */
+/* Responsividade para celulares */
 @media (max-width: 480px) {
+    .menu {
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .product {
+        width: 48%;
+        padding: 6px;
+    }
+
+    .item-image {
+        max-height: 80px;
+    }
+
+    .product-name {
+        font-size: 0.95rem;
+    }
+
+    .product-description {
+        font-size: 0.8rem;
+    }
+
+    .product-price {
+        font-size: 0.95rem;
+    }
+
     .title {
-        font-size: 1.8rem; /* Menor tamanho da fonte para dispositivos móveis */
+        font-size: 2rem;
     }
 
     .address, .schedule-text {
         font-size: 1rem;
     }
 
-    .menu-title {
-        font-size: 1.6rem;
-    }
-
-    /* Ajustes para as imagens em dispositivos pequenos */
-    .item-image {
-        max-height: 70px; /* Reduzimos ainda mais a altura */
-    }
-
-    /* Ajuste a largura para 100% nas telas pequenas */
-    .product {
-        width: 48%; /* Largura ajustada para 2 itens lado a lado no celular */
-    }
-
-    /* Ajusta as informações de cada produto */
-    .product-name {
-        font-size: 1.4rem; /* Diminuir o tamanho da fonte do nome */
-    }
-
-    .product-description {
-        font-size: 0.9rem; /* Ajuste no tamanho da descrição */
-    }
-
-    .product-price {
-        font-size: 1.2rem; /* Ajuste no tamanho do preço */
+    .header {
+        padding: 60px 10px;
     }
 }

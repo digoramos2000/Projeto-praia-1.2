@@ -3,19 +3,37 @@ body {
     font-family: 'Poppins', Arial, sans-serif;
     background-color: #1e1e2f;
     color: #fff;
-    text-align: center;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Títulos */
+h1, h2 {
+    font-family: 'Poppins', Arial, sans-serif;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+    margin: 30px 0;
+    line-height: 1.4;
 }
 
 /* Navbar */
 nav {
     background: linear-gradient(90deg, #ff8c00, #ff3d00);
-    padding: 15px;
+    padding: 15px 20px;
     display: flex;
-    justify-content: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     border-radius: 0 0 10px 10px;
+    position: relative;
+}
+
+/* Links de Navegação */
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: 0.3s;
 }
 
 nav a {
@@ -23,7 +41,7 @@ nav a {
     text-decoration: none;
     margin: 0 20px;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     transition: 0.3s;
     padding: 10px 15px;
     border-radius: 5px;
@@ -31,48 +49,216 @@ nav a {
 
 nav a:hover {
     background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
-}
-
-/* Botão Atualizar Cardápio */
-button {
-    background-color: #ff8c00;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 30px;
-}
-
-button:hover {
-    background-color: #ff3d00;
     transform: scale(1.05);
+}
+
+/* Menu Hambúrguer */
+.menu-hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.menu-hamburger .bar {
+    width: 30px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Animação para o menu hambúrguer */
+.menu-hamburger .bar:nth-child(1) {
+    transform: translateY(8px);
+}
+
+.menu-hamburger .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-hamburger .bar:nth-child(3) {
+    transform: translateY(-8px);
+}
+
+/* Transições para o menu de navegação */
+.nav-links {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.nav-links.nav-active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Responsividade para telas pequenas (Android) */
+@media (max-width: 768px) {
+    /* Exibe o menu hambúrguer */
+    .menu-hamburger {
+        display: flex;
+    }
+
+    /* O menu de links será ocultado */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #ff8c00;
+        padding: 15px 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links.nav-active {
+        display: flex;
+    }
+
+    /* Links dentro do menu */
+    .nav-links a {
+        padding: 15px 20px;
+        color: white;
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        font-weight: 600;
+    }
+
+    .nav-links a:hover {
+        background-color: #ff3d00;
+    }
 }
 
 /* Conteúdo */
 h1 {
     margin-top: 50px;
     font-size: 36px;
-    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
 }
 
-/* Responsividade */
+/* Feedback Container */
+#feedback-container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #2a2a3a;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: calc(100% - 40px); /* Ajuste do espaçamento lateral */
+}
+
+#feedback-container p {
+    font-size: 18px;
+    color: #bbb;
+}
+
+.feedback-item {
+    background: #3a3a4a;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-item p {
+    font-size: 16px;
+}
+
+.feedback-item small {
+    color: #bbb;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Responsividade para telas menores (Android e smartphones) */
 @media (max-width: 600px) {
     nav {
-        flex-direction: column;
-        padding: 10px;
-    }
-    nav a {
-        display: block;
-        margin: 5px 0;
+        padding: 10px 15px;
     }
 
-    button {
-        padding: 12px 25px;
+    nav a {
+        margin: 5px 0;
         font-size: 16px;
     }
+
+    .nav-links a {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    #feedback-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    /* Ajuste do menu hambúrguer */
+    .menu-hamburger .bar {
+        width: 25px;
+        height: 3px;
+    }
+
+    .nav-links a {
+        padding: 12px 20px;
+    }
+
+    /* Estilo do botão de feedback */
+    .submit-btn {
+        width: 100%;
+        padding: 15px;
+        background-color: #ff8c00;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    .submit-btn:hover {
+        background-color: #ff3d00;
+    }
+}
+
+/* Transições Suaves para Navegação */
+nav a,
+.nav-links a {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover,
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Melhorar os Botões */
+button,
+.submit-btn {
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover,
+.submit-btn:hover {
+    background-color: #ff3d00;
+    transform: scale(1.05);
+}
+
+/* Adicionar sombra leve aos itens de feedback */
+.feedback-item {
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajuste no espaçamento do container */
+#feedback-container {
+    padding: 20px;
+    margin-top: 30px;
 }

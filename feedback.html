@@ -1,4 +1,4 @@
-<!-- index.html -->
+<!-- feedback.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -10,16 +10,25 @@
 <body>
     <div class="container">
         <h2>Deixe seu Feedback</h2>
-        <textarea placeholder="Digite seu feedback aqui..."></textarea>
+        <textarea id="feedback-text" placeholder="Digite seu feedback aqui..."></textarea>
         <div class="rating">
-            <label>😀 Excelente</label>
-            <label>😊 Ótimo</label>
-            <label>😐 Bom</label>
-            <label>😕 Ruim</label>
-            <label>😡 Péssimo</label>
+            <label><input type="radio" name="rating" value="😀 Excelente"> 😀 Excelente</label>
+            <label><input type="radio" name="rating" value="😊 Ótimo"> 😊 Ótimo</label>
+            <label><input type="radio" name="rating" value="😐 Bom"> 😐 Bom</label>
+            <label><input type="radio" name="rating" value="😕 Ruim"> 😕 Ruim</label>
+            <label><input type="radio" name="rating" value="😡 Péssimo"> 😡 Péssimo</label>
         </div>
-        <button class="submit-btn">Enviar Feedback</button>
+        <button class="submit-btn" onclick="enviarFeedback()">Enviar Feedback</button>
+
+        <!-- Contêiner para exibir o feedback enviado -->
+        <div id="feedback-container"></div>
+
+        <!-- Mensagem de agradecimento -->
+        <div id="thank-you-message" style="display: none;">
+            <p>Muito obrigado pelo seu feedback!</p>
+        </div>
     </div>
+
+    <script src="feedback.js"></script>
 </body>
 </html>
-

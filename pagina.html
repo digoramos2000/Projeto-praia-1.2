@@ -8,21 +8,31 @@
 </head>
 <body>
     <nav>
-        <a href="cardapio.html">Cardápio</a>
-        <a href="login.html">Sair</a>
-        <a href="mesa.html">Mesas</a>
-        <a href="notafiscal.html">Nota Fiscal</a>
-        <a href="adicionarpedido.html">Atualizar Cardápio</a> <!-- Link para atualizar o cardápio -->
+        <!-- Ícone do menu hambúrguer -->
+        <div class="menu-hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!-- Links de navegação -->
+        <div class="nav-links">
+            <a href="cardapio.html">Cardápio</a>
+            <a href="login.html">Sair</a>
+            <a href="mesa.html">Mesas</a>
+            <a href="notafiscal.html">Nota Fiscal</a>
+            <a href="adicionarpedido.html">Atualizar Cardápio</a>
+            <a href="anotacao.html">Anotação de Pedidos</a> <!-- Novo link adicionado -->
+        </div>
     </nav>
+    
     <h1>Bem-vindo à Página</h1>
 
-    
-    
-    <script>
-        function atualizarCardapio() {
-            // Aqui você pode adicionar a lógica para atualizar o cardápio.
-            alert("Cardápio atualizado com sucesso!");
-        }
-    </script>
+    <h2>Feedbacks dos Clientes</h2>
+    <div id="feedback-container">
+        <p>Nenhum feedback disponível.</p>
+    </div>
+
+    <script src="pagina.js"></script>
 </body>
 </html>
