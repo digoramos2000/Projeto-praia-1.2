@@ -1,0 +1,31 @@
+<!-- cozinha.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozinha</title>
+</head>
+<body>
+    <h2>Pedidos na Cozinha</h2>
+    <ul id="lista-pedidos"></ul>
+    
+    <script>
+        function carregarPedidos() {
+            fetch("/listar_pedidos")
+                .then(response => response.json())
+                .then(pedidos => {
+                    let lista = document.getElementById("lista-pedidos");
+                    lista.innerHTML = "";
+                    pedidos.forEach(pedido => {
+                        let item = document.createElement("li");
+                        item.textContent = pedido;
+                        lista.appendChild(item);
+                    });
+                });
+        }
+
+        window.onload = carregarPedidos;
+    </script>
+</body>
+</html>
