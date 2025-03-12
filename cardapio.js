@@ -26,3 +26,51 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+// Função para mostrar as opções de acordo com a categoria escolhida
+function mostrarOpcoes() {
+    const categoria = document.getElementById('categoria').value;
+    const opcoesCardapio = document.getElementById('opcoes-cardapio');
+    
+    let opcoes = '';
+
+    if (categoria === 'pratos') {
+        opcoes = `
+            <h2>Pratos</h2>
+            <ul>
+                <li>Feijoada</li>
+                <li>Arroz com Peixe</li>
+                <li>Frango à Parmegiana</li>
+            </ul>
+        `;
+    } else if (categoria === 'lanches') {
+        opcoes = `
+            <h2>Lanches</h2>
+            <ul>
+                <li>X-Burger</li>
+                <li>X-Salada</li>
+                <li>X-Tudo</li>
+            </ul>
+        `;
+    } else if (categoria === 'bebidas') {
+        opcoes = `
+            <h2>Bebidas</h2>
+            <ul>
+                <li>Coca-Cola</li>
+                <li>Suco de Laranja</li>
+                <li>Água Mineral</li>
+            </ul>
+        `;
+    }
+
+    // Exibe as opções no HTML
+    opcoesCardapio.innerHTML = opcoes;
+}
+
+// Chama a função quando o formulário é enviado
+window.onload = () => {
+    document.getElementById('menu-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Evita o envio do formulário
+        mostrarOpcoes(); // Mostra as opções de acordo com a categoria escolhida
+    });
+}

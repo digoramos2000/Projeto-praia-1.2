@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anotação de Pedidos</title>
+    <link rel="stylesheet" href="anotacao.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Anotação de Pedidos</h1>
+        </header>
+        
+        <section class="form-section">
+            <form id="pedido-form">
+                <label for="numero-mesa">Número da Mesa:</label>
+                <input type="text" id="numero-mesa" name="numero-mesa" required placeholder="Digite o número da mesa">
+
+                <label for="pedido">Pedido:</label>
+                <textarea id="pedido" name="pedido" required placeholder="Descreva o pedido"></textarea>
+
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required>
+
+                <button type="submit">Adicionar Pedido</button>
+            </form>
+        </section>
+
+        <section class="pedidos-lista">
+            <h2>Pedidos Anotados:</h2>
+            <ul id="pedidos-lista">
+                <!-- Os pedidos serão exibidos aqui -->
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

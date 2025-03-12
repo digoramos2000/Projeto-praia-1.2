@@ -1,208 +1,84 @@
-/* Resetando estilos padrões */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* styles.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: column;
-    color: #333;
-}
-
-.container {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    width: 100%;
-    max-width: 800px;
+    margin: 0;
+    padding: 20px; /* Adicionado padding para dar um espaço nas laterais */
+  }
+  
+  .container {
     text-align: center;
-}
-
-h1 {
-    font-size: 2rem;
-    color: #0277bd;
-    margin-bottom: 15px;
-}
-
-.mesas-container {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.mesas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-}
-
-.mesa {
-    background-color: #0288d1;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.mesa:hover {
-    transform: scale(1.05);
-}
-
-.mesa.pedido {
-    background-color: #ff5722;
-}
-
-.buttons {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-button {
-    padding: 12px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.addMesa {
-    background-color: #0288d1;
-}
-
-.addMesa:hover {
-    background-color: #026aa7;
-    transform: scale(1.05);
-}
-
-.removeMesa {
-    background-color: #d32f2f;
-}
-
-.removeMesa:hover {
-    background-color: #b71c1c;
-    transform: scale(1.05);
-}
-
-/* Seção de Pedidos */
-.pedido-section {
-    display: none;
-    margin-top: 20px;
-    background: #f9f9f9;
+    max-width: 800px; /* Limitando a largura máxima para não esticar demais */
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 24px; /* Ajustando o tamanho do título */
+    margin-bottom: 20px;
+  }
+  
+  .mesas {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 mesas por linha para telas grandes */
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .mesa {
+    background-color: #fff;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.pedido-section h2 {
-    color: #0277bd;
-    margin-bottom: 15px;
-}
-
-#novoPedidoInput {
-    width: 70%;
-    padding: 10px;
     border: 2px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-    outline: none;
-}
-
-#novoPedidoInput:focus {
-    border-color: #0288d1;
-}
-
-/* Botão Adicionar Pedido */
-#addPedidoBtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 6px;
-    border: none;
-    font-size: 1rem;
-    font-weight: bold;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 10px;
-    display: block;
-    width: 100%;
-    max-width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#addPedidoBtn:hover {
-    background-color: #388E3C;
-    transform: scale(1.05);
-}
-
-/* Lista de pedidos */
-.pedido-list {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 15px;
-    font-size: 1rem;
-    color: #444;
-}
-
-.pedido-list li {
-    background-color: #f0f0f0;
-    margin: 6px 0;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ddd;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.pedido-list li button {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 5px 8px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.pedido-list li button:hover {
-    background-color: #d32f2f;
-}
-
-.voltar {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #0277bd;
-    padding: 10px 15px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.voltar:hover {
-    background-color: #0277bd;
-    color: white;
-}
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mesa.ocupada {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .mesa.disponivel {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .mesa:hover {
+    opacity: 0.8;
+  }
+  
+  /* Responsividade para telas médias (tablets) e smartphones */
+  @media (max-width: 768px) {
+    .mesas {
+      grid-template-columns: repeat(3, 1fr); /* 3 mesas por linha para tablets e smartphones */
+      gap: 15px; /* Menos espaçamento entre as mesas */
+    }
+  
+    .mesa {
+      font-size: 16px; /* Ajustando o tamanho da fonte */
+      padding: 15px; /* Menos padding nas mesas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .mesas {
+      grid-template-columns: repeat(2, 1fr); /* 2 mesas por linha para smartphones */
+      gap: 15px;
+    }
+  
+    .mesa {
+      font-size: 16px; /* Ajustando o tamanho da fonte */
+      padding: 12px; /* Menos padding */
+    }
+  
+    h1 {
+      font-size: 20px; /* Ajustando o tamanho do título para telas pequenas */
+    }
+  }
+  

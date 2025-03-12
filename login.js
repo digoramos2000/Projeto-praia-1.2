@@ -2,24 +2,32 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     event.preventDefault(); // Impede o envio do formulário
 
     // Captura o nome completo (nome + sobrenome)
-    const nomeCompleto = document.getElementById('nomeCompleto').value;
+    const nomeCompleto = document.getElementById('nomeCompleto').value.trim();
     const senha = document.getElementById('senha').value;
-    const mensagem = document.getElementById('mensagem');
+    const mensagemErro = document.getElementById('mensagemErro');
 
-    // Recupera a lista de usuários do localStorage
+    // Verifica se a lista de usuários está no localStorage
     const usuariosLista = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-    // Verifica se o nome completo e a senha estão corretos
-    const usuarioExistente = usuariosLista.find(usuario => `${usuario.nome} ${usuario.sobrenome}` === nomeCompleto && usuario.senha === senha);
+    console.log('Usuários no localStorage:', usuariosLista); // Verifique o que está armazenado
+
+    // Verifica se o nome completo (nome + sobrenome) existe no banco de dados
+    const usuarioExistente = usuariosLista.find(usuario => `${usuario.nome} ${usuario.sobrenome}`.trim() === nomeCompleto);
 
     if (usuarioExistente) {
-        mensagem.textContent = 'Login realizado com sucesso!';
-        mensagem.style.color = 'green';
+        // Verifica se a senha está correta
+        if (usuarioExistente.senha === senha) {
+            mensagemErro.textContent = 'Login realizado com sucesso!';
+            mensagemErro.style.color = 'green';
 
-        // Redireciona para a página dash.html
-        window.location.href = 'pagina.html'; // Redirecionamento para a página de dashboard
+            // Redireciona para a página de dashboard
+            window.location.href = 'pagina.html'; // Verifique se a página existe e o caminho está correto
+        } else {
+            mensagemErro.textContent = 'Senha incorreta!';
+            mensagemErro.style.color = 'red';
+        }
     } else {
-        mensagem.textContent = 'Nome de usuário ou senha incorretos!';
-        mensagem.style.color = 'red';
+        mensagemErro.textContent = 'Usuário não encontrado!';
+        mensagemErro.style.color = 'red';
     }
 });

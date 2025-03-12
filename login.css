@@ -60,8 +60,31 @@ button:hover {
     text-decoration: underline;
 }
 
+.bem-vindo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: #2196F3; /* Azul claro e amigável */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.bem-vindo:hover {
+    transform: scale(1.05); /* Aumenta o tamanho quando o mouse passa por cima */
+}
+
+.icone {
+    font-size: 22px;
+    margin-right: 8px;
+}
+
 .error {
     color: red;
-    font-size: 14px;
-    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 15px;
 }
